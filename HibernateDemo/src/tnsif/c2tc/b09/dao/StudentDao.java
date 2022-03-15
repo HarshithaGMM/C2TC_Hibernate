@@ -1,5 +1,6 @@
 package tnsif.c2tc.b09.dao;
 
+import tnsif.c2tc.b09.entity.Laptop;
 import tnsif.c2tc.b09.entity.Student;
 
 public interface StudentDao {
@@ -15,6 +16,10 @@ public interface StudentDao {
 	Student getStudent(int uid);
 
 	void deleteStudent(int uid);
+
+	void addLaptop(Laptop laptop);
+
+	
 	
 	
 

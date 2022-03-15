@@ -2,6 +2,7 @@ package tnsif.c2tc.b09.service;
 
 import tnsif.c2tc.b09.dao.StudentDao;
 import tnsif.c2tc.b09.dao.StudentDaoImpl;
+import tnsif.c2tc.b09.entity.Laptop;
 import tnsif.c2tc.b09.entity.Student;
 
 public class StudentServiceImp implements StudentService{
@@ -40,7 +41,13 @@ public class StudentServiceImp implements StudentService{
 		
 	}
 
-	
-	
+	@Override
+	public void addLatop(Laptop laptop) {
+		sd.getTranscation();
+		sd.addLaptop(laptop);
+		sd.endTranscation();
+		
+		
+	}
 	
 }

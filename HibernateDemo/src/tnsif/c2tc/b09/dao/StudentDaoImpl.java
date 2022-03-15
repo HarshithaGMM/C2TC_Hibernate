@@ -2,6 +2,7 @@ package tnsif.c2tc.b09.dao;
 
 import javax.persistence.EntityManager;
 
+import tnsif.c2tc.b09.entity.Laptop;
 import tnsif.c2tc.b09.entity.Student;
 
 public class StudentDaoImpl implements StudentDao{
@@ -20,8 +21,6 @@ public class StudentDaoImpl implements StudentDao{
 	@Override
 	public void getTranscation() {
 		entityManager.getTransaction().begin();
-		
-		
 	}
 
 	@Override
@@ -47,6 +46,12 @@ public class StudentDaoImpl implements StudentDao{
 		Student s=entityManager.find(Student.class, uid);
 		entityManager.remove(s);
 		
-	} 
+	}
+
+	@Override
+	public void addLaptop(Laptop laptop) {
+		entityManager.persist(laptop);
+		
+	}
 
 }
