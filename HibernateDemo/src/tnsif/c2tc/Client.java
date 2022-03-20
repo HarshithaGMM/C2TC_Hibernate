@@ -11,13 +11,19 @@ public class Client {
 	public static void main(String[] args) {
 		StudentService service=new StudentServiceImp();
 		Student student=new Student();
-		Laptop laptop=new Laptop();
+		Laptop laptop1=new Laptop();
+		Laptop laptop2=new Laptop();
 		student.setUid(2100810);
 		student.setName("Surendra");
-		laptop.setLuid(1);
-		laptop.setLname("HP");
-		student.setLaptop(laptop);
-		service.addLatop(laptop);
+		laptop1.setLuid(1);
+		laptop1.setLname("HP");
+		laptop2.setLuid(2);
+		laptop2.setLname("Lenevo");
+		student.getLaptop().add(laptop1);
+		student.getLaptop().add(laptop2);
+	
+		service.addLatop(laptop1);
+		service.addLatop(laptop2);
 		service.addStudent(student);
 		
 	

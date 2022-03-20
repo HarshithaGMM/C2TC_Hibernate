@@ -1,27 +1,26 @@
 package tnsif.c2tc.b09.entity;
-import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-
+import javax.persistence.OneToMany;
 
 @Entity
-public class Student implements Serializable {
+public class Student {
 	@Id
 	private int uid;
 	private String name;
-	@ManyToMany
-	private List<Laptop> laptop=new ArrayList<>();
+	@OneToMany(mappedBy = "student")
+	private List<Course> course=new ArrayList<>();
 	
-	public List<Laptop> getLaptop() {
-		return laptop;
+	
+	public List<Course> getCourse() {
+		return course;
 	}
-	public void setLaptop(List<Laptop> laptop) {
-		this.laptop = laptop;
+	public void setCourse(List<Course> course) {
+		this.course = course;
 	}
 	public int getUid() {
 		return uid;
@@ -35,11 +34,10 @@ public class Student implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "Student [uid=" + uid + ", name=" + name + "]";
 	}
+	
 
 }
