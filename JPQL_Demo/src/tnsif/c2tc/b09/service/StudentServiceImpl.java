@@ -30,13 +30,22 @@ public class StudentServiceImpl implements StudentService{
 
 	@Override
 	public List<Student> getStudentbytrainername(String string) {
+		// TODO Auto-generated method stub
 		List<Student> list=sd.getStudentbytrainername(string);
 		return list;
 	}
 
 	@Override
 	public List<Student> getStudentintherangeofdate(Date date1, Date date2) {
+		// TODO Auto-generated method stub
 		List<Student> list=sd.getStudentintherangeofdate(date1,date2);
+		return list;
+	}
+
+	@Override
+	public List<Student> getallstudent() {
+		List<Student> list=sd.getallstudent();
+	
 		return list;
 	}
 

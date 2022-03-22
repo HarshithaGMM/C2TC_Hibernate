@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -11,6 +13,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table( name ="details")
+@NamedQueries(@NamedQuery(name ="getallstudent", query = "select s from Student s"))
 public class Student {
 	@Id
 	private int uid;
@@ -19,7 +22,15 @@ public class Student {
 	private Date dateofbirth;
 	private float marks;
 	private String trainername;
+	private  Branch branch;
 	
+	
+	public Branch getBranch() {
+		return branch;
+	}
+	public void setBranch(Branch branch) {
+		this.branch = branch;
+	}
 	public int getUid() {
 		return uid;
 	}
@@ -51,5 +62,11 @@ public class Student {
 	public void setMarks(float marks) {
 		this.marks = marks;
 	}
+	@Override
+	public String toString() {
+		return "Student [uid=" + uid + ", name=" + name + ", dateofbirth=" + dateofbirth + ", marks=" + marks
+				+ ", trainername=" + trainername + ", branch=" + branch + "]";
+	}
+	
 
 }

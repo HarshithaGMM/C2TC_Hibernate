@@ -15,4 +15,6 @@ public interface StudentService {
 
 	public List<Student> getStudentintherangeofdate(Date date1, Date date2);
 
+	public List<Student> getallstudent();
+
 }
